@@ -177,7 +177,7 @@ export default class A11yDialog {
   private bindKeypress(event: KeyboardEvent) {
     // This is an escape hatch in case there are nested open dialogs, so that
     // only the top most dialog gets interacted with
-    if (document.activeElement?.closest('[aria-modal="true"]') !== this.$el) {
+    if (getActiveElement()?.closest('[aria-modal="true"]') !== this.$el) {
       return
     }
 
